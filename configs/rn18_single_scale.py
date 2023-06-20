@@ -15,19 +15,19 @@ from evaluation import StorePreds
 
 from models.util import get_n_params
 
-root = Path('datasets/cityscapes')
+root = Path('datasets/cityscapes')      # add symbolic link to datasets folder for different datasets
 path = os.path.abspath(__file__)
 dir_path = os.path.dirname(path)
 
-evaluating = False
-random_crop_size = 768
+evaluating = False                      # put to True if using the config only for evaluation of already trained model
+random_crop_size = 768                  # crop size, adjust it if having problems with GPU capacity
 
 scale = 1
-mean = [73.15, 82.90, 72.3]
-std = [47.67, 48.49, 47.73]
+mean = [73.15, 82.90, 72.3]             # Imagenet parameters, adjust for different datasets and initialization
+std = [47.67, 48.49, 47.73]             # Imagenet parameter, adjust for different datasets and initialization
 mean_rgb = tuple(np.uint8(scale * np.array(mean)))
 
-num_classes = Cityscapes.num_classes
+num_classes = Cityscapes.num_classes    # if working with something other than Cityscapes, implement and import that class  # noqa
 ignore_id = Cityscapes.num_classes
 class_info = Cityscapes.class_info
 color_info = Cityscapes.color_info
@@ -35,15 +35,15 @@ mapping = Cityscapes.map_to_id
 
 target_size_crops = (random_crop_size, random_crop_size)
 target_size_crops_feats = (random_crop_size // 4, random_crop_size // 4)
-target_size = (2048, 1024)
+target_size = (2048, 1024)              # resolution of final feature map, with this it is on full resolution
 target_size_feats = (2048 // 4, 1024 // 4)
 
-eval_each = 4
+eval_each = 4                           # frequency of validation process, it will be each 4 epochs
 
 
 trans_val = Compose(
     [Open(),
-     RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id),
+     RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id),   # remap the labels if they have additional classes or are in color, but you need them in ids  # noqa
      SetTargetSize(target_size=target_size, target_size_feats=target_size_feats),
      Tensor(),
      ]
@@ -55,8 +55,8 @@ else:
     trans_train = Compose(
         [Open(),
          RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id),
-         RandomFlip(),
-         RandomSquareCropAndScale(random_crop_size, ignore_id=num_classes, mean=mean_rgb),
+         RandomFlip(),                      # data augmentation technique
+         RandomSquareCropAndScale(random_crop_size, ignore_id=num_classes, mean=mean_rgb),      # data augmentation
          SetTargetSize(target_size=target_size_crops, target_size_feats=target_size_crops_feats),
          Tensor(),
          ]
@@ -65,13 +65,13 @@ else:
 dataset_train = Cityscapes(root, transforms=trans_train, subset='train')
 dataset_val = Cityscapes(root, transforms=trans_val, subset='val')
 
-resnet = resnet18(pretrained=True, efficient=False, mean=mean, std=std, scale=scale)
+resnet = resnet18(pretrained=True, efficient=False, mean=mean, std=std, scale=scale)    # we are using resnet pretrained on Imagenet for faster convergence # noqa
 model = SemsegModel(resnet, num_classes)
 if evaluating:
-    model.load_state_dict(torch.load('weights/rn18_single_scale/model_best.pt'))
+    model.load_state_dict(torch.load('weights/rn18_single_scale/model_best.pt'))        # change the path with your model path # noqa
 else:
     model.criterion = SemsegCrossEntropy(num_classes=num_classes, ignore_id=ignore_id)
-    lr = 4e-4
+    lr = 4e-4               # hyperparameres to change
     lr_min = 1e-6
     fine_tune_factor = 4
     weight_decay = 1e-4
@@ -86,7 +86,7 @@ else:
     optimizer = optim.Adam(optim_params, betas=(0.9, 0.99))
     lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs, lr_min)
 
-batch_size = 14
+batch_size = 14             # batch size should be reduced if your GPU is not big enough for default configuration
 print(f'Batch size: {batch_size}')
 
 if evaluating:

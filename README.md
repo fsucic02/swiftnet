@@ -30,6 +30,7 @@ From https://www.cityscapes-dataset.com/downloads/ download:
 * gtFine_trainvaltest.zip (241MB)
 
 Either download and extract to `datasets/` or create a symbolic link `datasets/Cityscapes`
+
 Expected dataset structure for Cityscapes is:
 ```
 gtFine/
@@ -64,3 +65,11 @@ python eval.py configs/rn18_single_scale.py
 ```bash
 python train.py configs/rn18_single_scale.py --store_dir=/path/to/store/experiments
 ``` 
+---
+### Additional instructions for students of D307:
+
+* Use config `configs/rn18_single_scale.py` for your experiments
+* If you need to use another dataset, create a symbolic link to the folder inside `dataset/custom_dataset` and add support for the dataset in `data/custom_data/custom_data.py` (use Cityscapes files as template)
+* You do not have to install and set up Cython since we have added new methods for confusion matrix and metrics calculation
+* Be careful when naming the experiments folders so you do not override something. Output folder should contain saved best model and last model, pickle file with validation mIoU and loss values. 
+* When evaluating, be sure to set `evaluating = True` in config and provide correct path of the saved model.
