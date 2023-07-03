@@ -4,8 +4,9 @@ import numpy as np
 import torch
 from tqdm import tqdm
 from time import perf_counter
+from torchmetrics import ConfusionMatrix
 
-__all__ = ['compute_errors', 'get_pred', 'evaluate_semseg']
+__all__ = ['compute_errors', 'evaluate_semseg']
 
 
 def compute_errors(conf_mat, class_info, verbose=True):
@@ -50,14 +51,6 @@ def compute_errors(conf_mat, class_info, verbose=True):
     return avg_pixel_acc, avg_class_iou, avg_class_recall, avg_class_precision, total_size, per_class_iou
 
 
-def get_pred(logits, labels, conf_mat):
-    _, pred = torch.max(logits.data, dim=1)
-    pred = pred.byte().cpu()
-    pred = pred.numpy().astype(np.int32)
-    true = labels.numpy().astype(np.int32)
-    calculate_conf_matrix(pred.reshape(-1), true.reshape(-1), conf_mat)
-
-
 def mt(sync=False):
     if sync:
         torch.cuda.synchronize()
@@ -66,39 +59,24 @@ def mt(sync=False):
 
 def evaluate_semseg(model, data_loader, class_info, observers=()):
     model.eval()
+    conf_matrix = ConfusionMatrix(task="multiclass", num_classes=model.num_classes)
     managers = [torch.no_grad()] + list(observers)
     with contextlib.ExitStack() as stack:
         for ctx_mgr in managers:
             stack.enter_context(ctx_mgr)
         conf_mat = np.zeros((model.num_classes, model.num_classes), dtype=np.uint64)
         for step, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
-            batch['original_labels'] = batch['original_labels'].numpy().astype(np.uint32)
+            batch['original_labels'] = batch['original_labels'].int().cpu()
             logits, additional = model.do_forward(batch, batch['original_labels'].shape[1:3])
-            pred = torch.argmax(logits.data, dim=1).byte().cpu().numpy().astype(np.uint32)
+            pred = torch.argmax(logits.data, dim=1).int().cpu()
             for o in observers:
                 o(pred, batch, additional)
-            calculate_conf_matrix(pred.flatten(), batch["original_labels"].flatten(), conf_mat, model.num_classes)
+            if model.criterion.ignore_id != -100:
+                valid_idx = batch["original_labels"] != model.criterion.ignore_id
+                pred = pred[valid_idx]
+                gt = batch["original_labels"][valid_idx]
+            conf_mat += conf_matrix(pred, gt).numpy().astype(np.uint64)
         print('')
         pixel_acc, iou_acc, recall, precision, _, per_class_iou = compute_errors(conf_mat, class_info, verbose=True)
     model.train()
     return iou_acc, per_class_iou
-
-
-def calculate_conf_matrix(predicted, target, conf_mat, num_classes=12):
-    idx = target != 255
-    target = target[idx]
-    predicted = predicted[idx]
-    x = predicted + num_classes * target
-    if num_classes == 19:
-        bincount_2d = np.bincount(
-            x.astype(np.int32), minlength=num_classes ** 2
-        )[:361]
-    else:
-        bincount_2d = np.bincount(
-            x.astype(np.int32), minlength=num_classes ** 2
-        )
-    if bincount_2d.size != num_classes ** 2:
-        print(bincount_2d.size, num_classes ** 2)
-        import pdb; pdb.set_trace()
-    conf = bincount_2d.reshape((num_classes, num_classes))
-    conf_mat += conf.astype(np.uint64)

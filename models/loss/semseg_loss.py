@@ -5,7 +5,7 @@ from models.util import upsample
 
 
 class SemsegCrossEntropy(nn.Module):
-    def __init__(self, num_classes=19, ignore_id=19, print_each=20):
+    def __init__(self, num_classes, ignore_id=-100, print_each=20):
         super(SemsegCrossEntropy, self).__init__()
         self.num_classes = num_classes
         self.ignore_id = ignore_id

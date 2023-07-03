@@ -6,7 +6,7 @@ from models.util import upsample
 
 
 class BoundaryAwareFocalLoss(nn.Module):
-    def __init__(self, gamma=0, num_classes=19, ignore_id=19, print_each=20):
+    def __init__(self, gamma=0, num_classes=19, ignore_id=-100, print_each=20):
         super(BoundaryAwareFocalLoss, self).__init__()
         self.num_classes = num_classes
         self.ignore_id = ignore_id
