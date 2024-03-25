@@ -111,3 +111,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+
+ 
+# ignore __pycache__
+**/__pycache__/**
