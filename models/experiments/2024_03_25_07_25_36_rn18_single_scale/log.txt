@@ -1,0 +1,297 @@
+Elapsed time: 0:00:00.238326
+LR: 3.9998e-04
+LR: 9.9996e-05
+Epoch: 0 / 249
+Experiment dir: models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 2.9257
+Step: 20 Loss: 1.2615
+Step: 40 Loss: 1.0306
+Step: 60 Loss: 0.9722
+Step: 80 Loss: 0.6377
+6.58fps
+Step: 100 Loss: 0.4750
+Step: 120 Loss: 0.6667
+Step: 140 Loss: 0.5451
+Step: 160 Loss: 0.4931
+6.59fps
+Step: 180 Loss: 0.3678
+Step: 200 Loss: 0.6827
+Evaluating model
+
+Errors:
+	road IoU accuracy = 93.73 %
+	sidewalk IoU accuracy = 61.12 %
+	building IoU accuracy = 78.00 %
+	wall IoU accuracy = 0.00 %
+	fence IoU accuracy = 11.00 %
+	pole IoU accuracy = 5.74 %
+	traffic light IoU accuracy = 0.00 %
+	traffic sign IoU accuracy = 2.59 %
+	vegetation IoU accuracy = 81.92 %
+	terrain IoU accuracy = 38.18 %
+	sky IoU accuracy = 74.48 %
+	person IoU accuracy = 49.68 %
+	rider IoU accuracy = 0.00 %
+	car IoU accuracy = 81.35 %
+	truck IoU accuracy = 0.00 %
+	bus IoU accuracy = 0.00 %
+	train IoU accuracy = 0.00 %
+	motorcycle IoU accuracy = 0.00 %
+	bicycle IoU accuracy = 7.01 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 30.78 %
+mean class recall -> TP / (TP+FN) = 48.26 %
+mean class precision -> TP / (TP+FP) = 36.57 %
+pixel accuracy = 87.91 %
+Best mIoU: 30.78% (epoch 0)
+Elapsed time: 0:11:14.691806
+LR: 3.9994e-04
+LR: 9.9984e-05
+Epoch: 1 / 249
+Step: 0 Loss: 0.5747
+Step: 20 Loss: 0.4946
+Step: 40 Loss: 0.7024
+Step: 60 Loss: 0.4620
+Step: 80 Loss: 0.5621
+4.64fps
+Step: 100 Loss: 0.4695
+Step: 120 Loss: 0.3865
+Step: 140 Loss: 0.2897
+Step: 160 Loss: 0.5482
+4.75fps
+Step: 180 Loss: 0.6151
+Step: 200 Loss: 0.4382
+Elapsed time: 0:21:25.292628
+LR: 3.9986e-04
+LR: 9.9965e-05
+Epoch: 2 / 249
+Step: 0 Loss: 0.3658
+Step: 20 Loss: 0.3492
+Step: 40 Loss: 0.2453
+Step: 60 Loss: 0.4356
+Step: 80 Loss: 0.4668
+3.93fps
+Step: 100 Loss: 0.3252
+Step: 120 Loss: 0.2363
+Step: 140 Loss: 0.3976
+Step: 160 Loss: 0.4272
+4.20fps
+Step: 180 Loss: 0.5633
+Step: 200 Loss: 0.3278
+Elapsed time: 0:32:45.687370
+LR: 3.9975e-04
+LR: 9.9937e-05
+Epoch: 3 / 249
+Step: 0 Loss: 0.2783
+Step: 20 Loss: 0.2411
+Step: 40 Loss: 0.4051
+Step: 60 Loss: 0.2597
+Step: 80 Loss: 0.4178
+3.97fps
+Step: 100 Loss: 0.4838
+Step: 120 Loss: 0.3188
+Step: 140 Loss: 0.5503
+Step: 160 Loss: 0.3095
+3.90fps
+Step: 180 Loss: 0.2596
+Step: 200 Loss: 0.3516
+Elapsed time: 0:44:56.555797
+LR: 3.9961e-04
+LR: 9.9902e-05
+Epoch: 4 / 249
+Experiment dir: models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 0.3050
+Step: 20 Loss: 0.3090
+Step: 40 Loss: 0.4168
+Step: 60 Loss: 0.3078
+Step: 80 Loss: 0.2932
+3.73fps
+Step: 100 Loss: 0.2418
+Step: 120 Loss: 0.2439
+Step: 140 Loss: 0.2862
+Step: 160 Loss: 0.2860
+3.70fps
+Step: 180 Loss: 0.2963
+Step: 200 Loss: 0.2917
+Evaluating model
+
+Errors:
+	road IoU accuracy = 94.01 %
+	sidewalk IoU accuracy = 66.86 %
+	building IoU accuracy = 84.21 %
+	wall IoU accuracy = 16.80 %
+	fence IoU accuracy = 20.83 %
+	pole IoU accuracy = 31.63 %
+	traffic light IoU accuracy = 19.38 %
+	traffic sign IoU accuracy = 44.45 %
+	vegetation IoU accuracy = 88.18 %
+	terrain IoU accuracy = 48.38 %
+	sky IoU accuracy = 88.58 %
+	person IoU accuracy = 63.60 %
+	rider IoU accuracy = 13.19 %
+	car IoU accuracy = 84.50 %
+	truck IoU accuracy = 10.64 %
+	bus IoU accuracy = 19.94 %
+	train IoU accuracy = 10.58 %
+	motorcycle IoU accuracy = 0.02 %
+	bicycle IoU accuracy = 64.35 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 45.80 %
+mean class recall -> TP / (TP+FN) = 71.99 %
+mean class precision -> TP / (TP+FP) = 52.14 %
+pixel accuracy = 91.07 %
+Best mIoU: 45.80% (epoch 4)
+Elapsed time: 1:02:21.364866
+LR: 3.9943e-04
+LR: 9.9859e-05
+Epoch: 5 / 249
+Step: 0 Loss: 0.6611
+Step: 20 Loss: 0.2272
+Step: 40 Loss: 0.2637
+Step: 60 Loss: 0.2317
+Step: 80 Loss: 0.3569
+3.97fps
+Step: 100 Loss: 0.3148
+Step: 120 Loss: 0.4003
+Step: 140 Loss: 0.4621
+Step: 160 Loss: 0.3032
+4.06fps
+Step: 180 Loss: 0.2063
+Step: 200 Loss: 0.3613
+Elapsed time: 1:14:15.312681
+LR: 3.9923e-04
+LR: 9.9809e-05
+Epoch: 6 / 249
+Step: 0 Loss: 0.4018
+Step: 20 Loss: 0.2538
+Step: 40 Loss: 0.2632
+Step: 60 Loss: 0.5241
+Step: 80 Loss: 0.2197
+3.48fps
+Step: 100 Loss: 0.3072
+Step: 120 Loss: 0.2995
+Step: 140 Loss: 0.2249
+Step: 160 Loss: 0.2749
+3.73fps
+Step: 180 Loss: 0.4369
+Step: 200 Loss: 0.2718
+Elapsed time: 1:27:18.389395
+LR: 3.9899e-04
+LR: 9.9750e-05
+Epoch: 7 / 249
+Step: 0 Loss: 0.3929
+Step: 20 Loss: 0.3680
+Step: 40 Loss: 0.2268
+Step: 60 Loss: 0.2811
+Step: 80 Loss: 0.2716
+3.53fps
+Step: 100 Loss: 0.3295
+Step: 120 Loss: 0.2348
+Step: 140 Loss: 0.3252
+Step: 160 Loss: 0.2702
+3.73fps
+Step: 180 Loss: 0.1933
+Step: 200 Loss: 0.2717
+Elapsed time: 1:40:08.170431
+LR: 3.9873e-04
+LR: 9.9684e-05
+Epoch: 8 / 249
+Experiment dir: models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 0.3325
+Step: 20 Loss: 0.2988
+Step: 40 Loss: 0.3755
+Step: 60 Loss: 0.3026
+Step: 80 Loss: 0.2610
+3.70fps
+Step: 100 Loss: 0.2337
+Step: 120 Loss: 0.2417
+Step: 140 Loss: 0.2433
+Step: 160 Loss: 0.2568
+3.89fps
+Step: 180 Loss: 0.1843
+Step: 200 Loss: 0.2826
+Evaluating model
+
+Errors:
+	road IoU accuracy = 95.52 %
+	sidewalk IoU accuracy = 71.90 %
+	building IoU accuracy = 85.37 %
+	wall IoU accuracy = 19.43 %
+	fence IoU accuracy = 32.64 %
+	pole IoU accuracy = 44.74 %
+	traffic light IoU accuracy = 38.43 %
+	traffic sign IoU accuracy = 58.93 %
+	vegetation IoU accuracy = 89.43 %
+	terrain IoU accuracy = 51.28 %
+	sky IoU accuracy = 88.85 %
+	person IoU accuracy = 68.21 %
+	rider IoU accuracy = 18.62 %
+	car IoU accuracy = 88.02 %
+	truck IoU accuracy = 23.87 %
+	bus IoU accuracy = 34.62 %
+	train IoU accuracy = 11.36 %
+	motorcycle IoU accuracy = 16.42 %
+	bicycle IoU accuracy = 62.61 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 52.64 %
+mean class recall -> TP / (TP+FN) = 76.31 %
+mean class precision -> TP / (TP+FP) = 59.53 %
+pixel accuracy = 92.32 %
+Best mIoU: 52.64% (epoch 8)
+Elapsed time: 1:57:34.423575
+LR: 3.9843e-04
+LR: 9.9610e-05
+Epoch: 9 / 249
+Step: 0 Loss: 0.3731
+Step: 20 Loss: 0.3474
+Step: 40 Loss: 0.2346
+Step: 60 Loss: 0.2697
+Step: 80 Loss: 0.3151
+3.50fps
+Step: 100 Loss: 0.2272
+Step: 120 Loss: 0.3655
+Step: 140 Loss: 0.3116
+Step: 160 Loss: 0.2273
+3.82fps
+Step: 180 Loss: 0.3292
+Step: 200 Loss: 0.1368
+Elapsed time: 2:10:24.686489
+LR: 3.9810e-04
+LR: 9.9528e-05
+Epoch: 10 / 249
+Step: 0 Loss: 0.2247
+Step: 20 Loss: 0.1721
+Step: 40 Loss: 0.2322
+Step: 60 Loss: 0.4364
+Step: 80 Loss: 0.4512
+3.71fps
+Step: 100 Loss: 0.3461
+Step: 120 Loss: 0.1704
+Step: 140 Loss: 0.2723
+Step: 160 Loss: 0.5331
+3.79fps
+Step: 180 Loss: 0.5902
+Step: 200 Loss: 0.3267
+Elapsed time: 2:23:13.936411
+LR: 3.9774e-04
+LR: 9.9438e-05
+Epoch: 11 / 249
+Step: 0 Loss: 0.2777
+Step: 20 Loss: 0.1990
+Step: 40 Loss: 0.2881
+Step: 60 Loss: 0.2139
+Step: 80 Loss: 0.3045
+3.49fps
+Step: 100 Loss: 0.2625
+Step: 120 Loss: 0.2159
+Step: 140 Loss: 0.4992
+Step: 160 Loss: 0.2105
+3.72fps
+Step: 180 Loss: 0.2085
+Step: 200 Loss: 0.1639
+Elapsed time: 2:36:05.767169
+LR: 3.9734e-04
+LR: 9.9341e-05
+Epoch: 12 / 249
+Experiment dir: models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 0.4111
+Step: 20 Loss: 0.3335
+Step: 40 Loss: 0.2824
+Step: 60 Loss: 0.1490
