@@ -1,11 +1,30 @@
 import torch
 import torch.nn.functional as F
 import warnings
+import re
 
 from torch import nn as nn
 
 upsample = lambda x, size: F.interpolate(x, size, mode='bilinear', align_corners=False)
 batchnorm_momentum = 0.01 / 2
+
+
+def read_last_and_best_epoch(path):
+    if not path.exists():
+        return -1, -1, 0.0
+    last_epoch, best_epoch, best_mIoU = 0, 0, 0.0
+    with open(path / 'log.txt', 'r') as log:
+        lines = log.readlines()[::-1]
+        for line in lines:
+            match_last = re.findall(r'Epoch: (\d+)', line)
+            match_best = re.findall(r'Best mIoU: (\d+\.\d+).*\b(\d+)', line)
+            if len(match_last) > 0:
+                last_epoch = int(line[0]) - 1
+            if len(match_best) > 0:
+                best_epoch = int(match_best[0])
+                best_mIoU = float(match_best[1])
+            if last_epoch > 0 and best_epoch > 0:
+                return last_epoch, best_epoch, best_mIoU
 
 
 def get_n_params(parameters):
