@@ -16,13 +16,13 @@ def read_last_and_best_epoch(path):
     with open(path / 'log.txt', 'r') as log:
         lines = log.readlines()[::-1]
         for line in lines:
-            match_last = re.findall(r'Epoch: (\d+)', line)
-            match_best = re.findall(r'Best mIoU: (\d+\.\d+).*\b(\d+)', line)
-            if len(match_last) > 0:
-                last_epoch = int(line[0]) - 1
-            if len(match_best) > 0:
-                best_epoch = int(match_best[0])
-                best_mIoU = float(match_best[1])
+            match_last = re.search(r'Epoch: (\d+)', line)
+            match_best = re.search(r'Best mIoU: (\d+\.\d+).*\b(\d+)', line)
+            if match_last and last_epoch == 0:
+                last_epoch = int(match_last.group(1)) - 1
+            if match_best and best_epoch == 0:
+                best_epoch = int(match_best.group(2))
+                best_mIoU = float(match_best.group(1))
             if last_epoch > 0 and best_epoch > 0:
                 return last_epoch, best_epoch, best_mIoU
 
