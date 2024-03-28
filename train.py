@@ -91,6 +91,7 @@ class Trainer:
             sys.stdout = Logger(sys.stdout, f)
 
         self.model.cuda()
+        self.optimizer.cuda()
 
         return self
 
