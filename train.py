@@ -94,7 +94,7 @@ class Trainer:
         for state in self.optimizer.state.values():
             for k, v in state.items():
                 if isinstance(v, torch.Tensor):
-                    state[k] = v.to(self.model.device)
+                    state[k] = v.to(next(self.model.parameters()).device)
 
         return self
 
