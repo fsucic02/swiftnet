@@ -70,6 +70,12 @@ class Trainer:
             self.best_iou_epoch = best_epoch
             self.model.load_state_dict(torch.load(self.experiment_dir / 'stored' / 'model.pt'))
             self.optimizer.load_state_dict(torch.load(self.experiment_dir / 'stored' / 'optimizer.pt'))
+
+            for state in self.optimizer.state.values():
+                for k, v in state.items():
+                    if isinstance(v, torch.Tensor):
+                        state[k] = v.to(self.model.device)
+
             self.conf.lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer,
                                                                                 self.hyperparams.epochs,
                                                                                 self.hyperparams.lr_min,
