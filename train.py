@@ -10,6 +10,7 @@ import pickle
 from time import perf_counter
 
 from evaluation import evaluate_semseg
+from models.util import read_last_and_best_epoch
 
 
 def import_module(path):
@@ -63,6 +64,16 @@ class Trainer:
         if self.args.resume:
             self.experiment_dir = Path(self.args.resume)
             print(f'Resuming experiment from {args.resume}')
+            last_epoch, best_epoch, best_mIoU = read_last_and_best_epoch(self.experiment_dir)
+            self.hyperparams.start_epoch = last_epoch
+            self.best_iou = best_mIoU
+            self.best_iou_epoch = best_epoch
+            self.model.load_state_dict(torch.load(self.experiment_dir / 'stored' / 'model.pt'))
+            self.optimizer.load_state_dict(torch.load(self.experiment_dir / 'stored' / 'optimizer.pt'))
+            self.conf.lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer,
+                                                                                self.hyperparams.epochs,
+                                                                                self.hyperparams.lr_min,
+                                                                                self.hyperparams.start_epoch)
         else:
             self.experiment_dir = Path(self.args.store_dir) / (
                     self.experiment_start.strftime('%Y_%m_%d_%H_%M_%S_') + self.name)
