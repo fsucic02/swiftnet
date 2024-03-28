@@ -91,8 +91,6 @@ class Trainer:
             sys.stdout = Logger(sys.stdout, f)
 
         self.model.cuda()
-        print(f"Model device: {next(self.model.parameters()).device}")
-        print(f"Optimizer device: {next(self.optimizer.parameters()).device}")
 
         return self
 
