@@ -5151,3 +5151,65 @@ LR: 9.3855e-06
 Epoch: 201 / 249
 Step: 0 Loss: 0.1214
 Step: 20 Loss: 0.1230
+Step: 40 Loss: 0.0971
+Step: 60 Loss: 0.1450
+Step: 80 Loss: 0.0959
+5.48fps
+Step: 100 Loss: 0.1234
+Step: 120 Loss: 0.1224
+Step: 140 Loss: 0.1017
+Step: 160 Loss: 0.1229
+5.86fps
+Step: 180 Loss: 0.1612
+Step: 200 Loss: 0.1547
+Elapsed time: 2:13:15.682245
+LR: 3.3413e-05
+LR: 9.0424e-06
+Epoch: 202 / 249
+Step: 0 Loss: 0.1656
+Step: 20 Loss: 0.1011
+Step: 40 Loss: 0.1405
+Step: 60 Loss: 0.1086
+Step: 80 Loss: 0.1760
+5.81fps
+Step: 100 Loss: 0.1928
+Step: 120 Loss: 0.0943
+Step: 140 Loss: 0.1538
+Step: 160 Loss: 0.1123
+6.04fps
+Step: 180 Loss: 0.1339
+Step: 200 Loss: 0.1099
+Elapsed time: 2:21:16.833594
+LR: 3.2057e-05
+LR: 8.7058e-06
+Epoch: 203 / 249
+Step: 0 Loss: 0.1209
+Step: 20 Loss: 0.1415
+Step: 40 Loss: 0.1416
+Step: 60 Loss: 0.0882
+Step: 80 Loss: 0.1263
+6.02fps
+Step: 100 Loss: 0.1215
+Step: 120 Loss: 0.0798
+Step: 140 Loss: 0.0623
+Step: 160 Loss: 0.1100
+6.12fps
+Step: 180 Loss: 0.1658
+Step: 200 Loss: 0.0923
+Elapsed time: 2:29:24.876102
+LR: 3.0727e-05
+LR: 8.3758e-06
+Epoch: 204 / 249
+Experiment dir: models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 0.1390
+Step: 20 Loss: 0.1990
+Step: 40 Loss: 0.0995
+Step: 60 Loss: 0.2048
+Step: 80 Loss: 0.1079
+6.29fps
+Step: 100 Loss: 0.1039
+Step: 120 Loss: 0.1281
+Step: 140 Loss: 0.1141
+Step: 160 Loss: 0.1198
+6.39fps
+Step: 180 Loss: 0.0940
