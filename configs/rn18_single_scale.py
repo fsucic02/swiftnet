@@ -57,7 +57,7 @@ if evaluating:
 else:
     trans_train = Compose(
         [Open(),
-         RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id),
+         #RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id), # no need for mapping since teacher gives trainIds as output
          RandomFlip(),                      # data augmentation technique
          RandomSquareCropAndScale(random_crop_size, ignore_id=num_classes, mean=mean_rgb),      # data augmentation
          SetTargetSize(target_size=target_size_crops, target_size_feats=target_size_crops_feats),
@@ -65,15 +65,16 @@ else:
          ]
     )
 
-dataset_train = Cityscapes(root, transforms=trans_train, subset='train')
-dataset_val = Cityscapes(root, transforms=trans_val, subset='val')
+dataset_train = Cityscapes(root, transforms=trans_train, subset='train', labels_dir='pseudoFine') # change gtFine to pseudoFine
+dataset_val = Cityscapes(root, transforms=trans_val, subset='val', labels_dir='pseudoFine') # change gtFine to pseudoFine
 
 resnet = resnet18(pretrained=True, efficient=False, mean=mean, std=std, scale=scale)    # we are using resnet pretrained on Imagenet for faster convergence # noqa
 model = SemsegModel(resnet, num_classes)
+model.criterion = SemsegCrossEntropy(num_classes=num_classes, ignore_id=ignore_id)
+
 if evaluating:
-    model.load_state_dict(torch.load('weights/rn18_single_scale/model_best.pt'))        # change the path with your model path # noqa
+    model.load_state_dict(torch.load('model_best.pt'))        # change the path with your model path # noqa
 else:
-    model.criterion = SemsegCrossEntropy(num_classes=num_classes, ignore_id=ignore_id)
     lr = 4e-4               # hyperparameres to change
     lr_min = 1e-6
     fine_tune_factor = 4
