@@ -6312,3 +6312,140 @@ Step: 0 Loss: 0.1068
 Step: 20 Loss: 0.1576
 Step: 40 Loss: 0.1658
 Step: 60 Loss: 0.1091
+Elapsed time: 0:00:00.997794
+LR: 1.0158e-06
+LR: 1.0039e-06
+Epoch: 247 / 249
+Step: 0 Loss: 0.0911
+Step: 20 Loss: 0.2257
+Step: 40 Loss: 0.1082
+Step: 60 Loss: 0.1174
+Step: 80 Loss: 0.1344
+4.95fps
+Step: 100 Loss: 0.1009
+Step: 120 Loss: 0.1142
+Step: 140 Loss: 0.0830
+Elapsed time: 0:00:00.807344
+LR: 1.0630e-06
+LR: 1.0156e-06
+Epoch: 246 / 249
+Step: 0 Loss: 0.1072
+Step: 20 Loss: 0.1565
+Step: 40 Loss: 0.1056
+Step: 60 Loss: 0.0894
+Step: 80 Loss: 0.1085
+7.03fps
+Step: 100 Loss: 0.1367
+Step: 120 Loss: 0.1165
+Step: 140 Loss: 0.0962
+Step: 160 Loss: 0.1068
+7.18fps
+Step: 180 Loss: 0.1377
+Step: 200 Loss: 0.0812
+Elapsed time: 0:06:46.194303
+LR: 1.0158e-06
+LR: 1.0039e-06
+Epoch: 247 / 249
+Step: 0 Loss: 0.1839
+Step: 20 Loss: 0.0965
+Step: 40 Loss: 0.0977
+Step: 60 Loss: 0.1285
+Step: 80 Loss: 0.0934
+6.38fps
+Step: 100 Loss: 0.1058
+Step: 120 Loss: 0.1001
+Step: 140 Loss: 0.1188
+Step: 160 Loss: 0.1313
+6.29fps
+Step: 180 Loss: 0.1659
+Step: 200 Loss: 0.0994
+Elapsed time: 0:14:30.840936
+LR: 1.0000e-06
+LR: 1.0000e-06
+Epoch: 248 / 249
+Experiment dir: /content/swiftnet/models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 0.0905
+Step: 20 Loss: 0.1150
+Step: 40 Loss: 0.0808
+Step: 60 Loss: 0.1432
+Step: 80 Loss: 0.1568
+6.21fps
+Step: 100 Loss: 0.1023
+Step: 120 Loss: 0.0892
+Step: 140 Loss: 0.1242
+Step: 160 Loss: 0.0872
+6.21fps
+Step: 180 Loss: 0.1220
+Step: 200 Loss: 0.1136
+Evaluating model
+
+Errors:
+	road IoU accuracy = 97.54 %
+	sidewalk IoU accuracy = 81.83 %
+	building IoU accuracy = 91.38 %
+	wall IoU accuracy = 51.61 %
+	fence IoU accuracy = 55.43 %
+	pole IoU accuracy = 60.46 %
+	traffic light IoU accuracy = 65.63 %
+	traffic sign IoU accuracy = 75.51 %
+	vegetation IoU accuracy = 91.96 %
+	terrain IoU accuracy = 63.79 %
+	sky IoU accuracy = 94.24 %
+	person IoU accuracy = 79.94 %
+	rider IoU accuracy = 55.87 %
+	car IoU accuracy = 93.81 %
+	truck IoU accuracy = 63.70 %
+	bus IoU accuracy = 82.17 %
+	train IoU accuracy = 68.05 %
+	motorcycle IoU accuracy = 49.71 %
+	bicycle IoU accuracy = 75.00 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 73.56 %
+mean class recall -> TP / (TP+FN) = 86.91 %
+mean class precision -> TP / (TP+FP) = 81.43 %
+pixel accuracy = 95.43 %
+Best mIoU: 73.56% (epoch 248)
+Elapsed time: 0:25:57.534558
+LR: 1.0158e-06
+LR: 1.0039e-06
+Epoch: 249 / 249
+Experiment dir: /content/swiftnet/models/experiments/2024_03_25_07_25_36_rn18_single_scale
+Step: 0 Loss: 0.1223
+Step: 20 Loss: 0.0841
+Step: 40 Loss: 0.1196
+Step: 60 Loss: 0.1010
+Step: 80 Loss: 0.1353
+6.37fps
+Step: 100 Loss: 0.1146
+Step: 120 Loss: 0.1143
+Step: 140 Loss: 0.1343
+Step: 160 Loss: 0.1020
+6.60fps
+Step: 180 Loss: 0.0880
+Step: 200 Loss: 0.1326
+Evaluating model
+
+Errors:
+	road IoU accuracy = 97.51 %
+	sidewalk IoU accuracy = 81.72 %
+	building IoU accuracy = 91.34 %
+	wall IoU accuracy = 51.54 %
+	fence IoU accuracy = 54.98 %
+	pole IoU accuracy = 60.60 %
+	traffic light IoU accuracy = 65.67 %
+	traffic sign IoU accuracy = 75.68 %
+	vegetation IoU accuracy = 92.00 %
+	terrain IoU accuracy = 63.69 %
+	sky IoU accuracy = 94.29 %
+	person IoU accuracy = 79.67 %
+	rider IoU accuracy = 55.18 %
+	car IoU accuracy = 93.83 %
+	truck IoU accuracy = 62.53 %
+	bus IoU accuracy = 82.52 %
+	train IoU accuracy = 67.92 %
+	motorcycle IoU accuracy = 50.76 %
+	bicycle IoU accuracy = 74.96 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 73.49 %
+mean class recall -> TP / (TP+FN) = 87.20 %
+mean class precision -> TP / (TP+FP) = 81.11 %
+pixel accuracy = 95.42 %
+Best mIoU: 73.56% (epoch 248)
