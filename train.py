@@ -105,7 +105,6 @@ class Trainer:
             with open(f'{self.experiment_dir}/val_ious.pkl', 'wb') as f:
                 pickle.dump(self.validation_ious, f)
             dir_iou = Path(self.args.store_dir) / (f'{self.best_iou:.2f}_'.replace('.', '-') + self.name)
-            os.rename(self.experiment_dir, dir_iou)
 
     def train(self):
         num_epochs = self.hyperparams.epochs
