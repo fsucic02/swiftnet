@@ -3,7 +3,7 @@ from torch.utils.data.dataloader import default_collate
 import numpy as np
 import torch
 from PIL import Image as pimg
-
+from torch.nn import functional as F
 from data.transform.flow_utils import readFlow
 
 RESAMPLE = pimg.BICUBIC
@@ -13,9 +13,10 @@ __all__ = ['Open', 'SetTargetSize', 'Numpy', 'Tensor', 'detection_collate', 'cus
 
 
 class Open:
-    def __init__(self, palette=None, copy_labels=True):
+    def __init__(self, palette=None, copy_labels=True, subset='val'):
         self.palette = palette
         self.copy_labels = copy_labels
+        self.subset = subset
 
     def __call__(self, example: dict):
         try:
@@ -28,11 +29,16 @@ class Open:
             if 'depth' in example:
                 example['depth'] = pimg.open(example['depth'])
             if 'labels' in example:
-                ret_dict['labels'] = pimg.open(example['labels'])
+                if self.subset == 'val':
+                    ret_dict['labels'] = pimg.open(example['labels'])
+                else:
+                    ret_dict['labels'] = torch.load(example['labels'])
+                    ret_dict['labels'] = F.interpolate(ret_dict['labels'].unsqueeze(0), size=(1024, 2048), mode='bilinear')
+                    ret_dict['labels'] = ret_dict['labels'].squeeze(0)
                 if self.palette is not None:
                     ret_dict['labels'].putpalette(self.palette)
                 if self.copy_labels:
-                    ret_dict['original_labels'] = ret_dict['labels'].copy()
+                    ret_dict['original_labels'] = ret_dict['labels']
             if 'flow' in example:
                 ret_dict['flow'] = readFlow(example['flow'])
         except OSError:
@@ -61,6 +67,8 @@ class SetTargetSize:
 
 
 class Tensor:
+    def __init__(self, subset='val'):
+        self.subset = subset
     def _trans(self, img, dtype):
         img = np.array(img, dtype=dtype)
         if len(img.shape) == 3:
@@ -74,10 +82,11 @@ class Tensor:
                 ret_dict[k] = self._trans(example[k], np.float32)
         if 'depth' in example:
             ret_dict['depth'] = self._trans(example['depth'], np.uint8)
-        if 'labels' in example:
-            ret_dict['labels'] = self._trans(example['labels'], np.int64)
-        if 'original_labels' in example:
-            ret_dict['original_labels'] = self._trans(example['original_labels'], np.int64)
+        if self.subset == 'val':
+            if 'labels' in example:
+                ret_dict['labels'] = self._trans(example['labels'], np.int64)
+            if 'original_labels' in example:
+                ret_dict['original_labels'] = self._trans(example['original_labels'], np.int64)
         if 'depth_hist' in example:
             ret_dict['depth_hist'] = [self._trans(d, np.float32) for d in example['depth_hist']] if isinstance(
                 example['depth_hist'], list) else self._trans(example['depth_hist'], np.float32)

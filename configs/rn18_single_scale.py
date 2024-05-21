@@ -19,7 +19,7 @@ root = Path('datasets/cityscapes')      # add symbolic link to datasets folder f
 path = os.path.abspath(__file__)
 dir_path = os.path.dirname(path)
 
-evaluating = False                      # put to True if using the config only for evaluation of already trained model
+evaluating = True                      # put to True if using the config only for evaluation of already trained model
 # random_crop_size = 768                  # crop size, adjust it if having problems with GPU capacity
 random_crop_size = 448                  # crop size, adjust it if having problems with GPU capacity
 
@@ -45,10 +45,10 @@ eval_each = 4                           # frequency of validation process, it wi
 
 
 trans_val = Compose(
-    [Open(),
+    [Open(subset='val'),
      RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id),   # remap the labels if they have additional classes or are in color, but you need them in ids  # noqa
      SetTargetSize(target_size=target_size, target_size_feats=target_size_feats),
-     Tensor(),
+     Tensor(subset='val'),
      ]
 )
 
@@ -56,12 +56,12 @@ if evaluating:
     trans_train = trans_val
 else:
     trans_train = Compose(
-        [Open(),
+        [Open(subset='train'),
          #RemapLabels(mapping, ignore_id=255, ignore_class=ignore_id), # no need for mapping since teacher gives trainIds as output
          RandomFlip(),                      # data augmentation technique
          RandomSquareCropAndScale(random_crop_size, ignore_id=num_classes, mean=mean_rgb),      # data augmentation
          SetTargetSize(target_size=target_size_crops, target_size_feats=target_size_crops_feats),
-         Tensor(),
+         Tensor(subset='train'),
          ]
     )
 

@@ -47,7 +47,7 @@ class Cityscapes(Dataset):
         self.open_depth = open_depth
         self.images = list(sorted(self.images_dir.glob('*/*.png')))
         if self.has_labels:
-            self.labels = list(sorted(self.labels_dir.glob('*/*labelIds.png')))
+            self.labels = list(sorted(self.labels_dir.glob('*/*probs.pt' if subset == 'train' else '*/*labelIds.png')))
         self.transforms = transforms
         self.epoch = epoch
 
