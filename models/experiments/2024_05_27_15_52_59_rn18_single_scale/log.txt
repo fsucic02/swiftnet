@@ -1,9 +1,0 @@
-Elapsed time: 0:00:00.115042
-LR: 3.9998e-04
-LR: 9.9996e-05
-Epoch: 0 / 249
-Experiment dir: models/experiments/2024_05_27_15_52_59_rn18_single_scale
-Step: 0 Loss: 12762.5752
-Step: 20 Loss: 657.0981
-Step: 40 Loss: 3152.6294
-Step: 60 Loss: 2903.0037
