@@ -5,7 +5,8 @@ import numpy as np
 import pickle
 from collections import defaultdict
 from PIL import Image as pimg
-
+import torch.nn.functional as F
+import torchvision.transforms.functional as TF
 
 def disparity_distribution_uniform(max_disp, num_bins):
     return np.linspace(0, max_disp, num_bins - 1)
@@ -117,9 +118,22 @@ def one_hot_encoding(labels, C):
 
     return target
 
-
 def crop_and_scale_img(img: pimg, crop_box, target_size, pad_size, resample, blank_value):
     target = pimg.new(img.mode, pad_size, color=blank_value)
     target.paste(img)
     res = target.crop(crop_box).resize(target_size, resample=resample)
     return res
+
+def crop_and_scale_tensor(tensor, crop_box, target_size):
+    # tensor: input tenzor oblika CxHxW (19x1024x2048)
+    # crop_box: (left, upper, right, lower)
+    # target_size: (target_height, target_width)
+    # resample: ignoriramo jer torch.nn.functional.interpolate automatski koristi bilinearne interpolacije
+
+    # Izreži dio originalnog tenzora na temelju crop_box
+    cropped_tensor = TF.crop(tensor, *crop_box)
+
+    # Skaliraj izrezani dio na ciljane dimenzije
+    resized_tensor = F.interpolate(cropped_tensor.unsqueeze(0), size=target_size, mode='bilinear', align_corners=False).squeeze(0)
+
+    return resized_tensor

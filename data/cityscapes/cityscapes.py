@@ -48,10 +48,12 @@ class Cityscapes(Dataset):
         self.images = list(sorted(self.images_dir.glob('*/*.png')))
         if self.has_labels:
             self.labels = list(sorted(self.labels_dir.glob('*/*probs.pt' if subset == 'train' else '*/*labelIds.png')))
+            print(labels[-1])
         self.transforms = transforms
         self.epoch = epoch
 
         print(f'Num images: {len(self)}')
+        print(f'Num labels: {len(self.labels)}')
 
     def __len__(self):
         return len(self.images)

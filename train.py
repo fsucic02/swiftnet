@@ -11,7 +11,7 @@ from time import perf_counter
 
 from evaluation import evaluate_semseg
 from models.util import read_last_and_best_epoch
-
+import torch.multiprocessing as mp
 
 def import_module(path):
     spec = importlib.util.spec_from_file_location("module", path)
@@ -171,6 +171,7 @@ parser.set_defaults(eval_train=False)
 parser.set_defaults(eval=True)
 
 if __name__ == '__main__':
+    mp.set_start_method('spawn')
     args = parser.parse_args()
     conf_path = Path(args.config)
     conf = import_module(args.config)

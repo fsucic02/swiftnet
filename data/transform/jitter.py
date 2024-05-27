@@ -5,10 +5,11 @@ from math import ceil
 import numpy as np
 import torch
 from PIL import Image as pimg
+import torch.nn.functional as F
 
 from data.transform import RESAMPLE, RESAMPLE_D
 from data.transform.flow_utils import pad_flow, crop_and_scale_flow, flip_flow_horizontal
-from data.util import bb_intersection_over_union, crop_and_scale_img
+from data.util import bb_intersection_over_union, crop_and_scale_img, crop_and_scale_tensor
 
 __all__ = ['Pad', 'PadToFactor', 'Normalize', 'Denormalize', 'DenormalizeTh', 'Resize', 'RandomFlip',
            'RandomSquareCropAndScale', 'ResizeLongerSide', 'Downsample']
@@ -134,10 +135,13 @@ class Downsample:
             ret_dict['depth'] = example['depth'].resize(size, resample=RESAMPLE)
         return {**example, **ret_dict}
 
+def scale_method(scale, wh, size):
+  return int(scale * wh)
+
 
 class RandomSquareCropAndScale:
     def __init__(self, wh, mean, ignore_id, min=.5, max=2., class_incidence=None, class_instances=None,
-                 inst_classes=(3, 12, 14, 15, 16, 17, 18), scale_method=lambda scale, wh, size: int(scale * wh)):
+                 inst_classes=(3, 12, 14, 15, 16, 17, 18), scale_method=scale_method):
         self.wh = wh
         self.min = min
         self.max = max
@@ -221,7 +225,7 @@ class RandomSquareCropAndScale:
             'image': self._trans(image, crop_box, target_size, pad_size, RESAMPLE, self.mean),
         }
         if 'labels' in example:
-            ret_dict['labels'] = self._trans(example['labels'], crop_box, target_size, pad_size, pimg.NEAREST, self.ignore_id)
+            ret_dict['labels'] = crop_and_scale_tensor(example['labels'], crop_box, target_size)
         for k in ['image_prev', 'image_next']:
             if k in example:
                 ret_dict[k] = self._trans(example[k], crop_box, target_size, pad_size, RESAMPLE,
@@ -234,6 +238,9 @@ class RandomSquareCropAndScale:
 
 
 class RandomFlip:
+    def _trans_tensor(self, tensor, flip: bool):
+        return torch.flip(tensor, dims=[-1]) if flip else tensor
+
     def _trans(self, img: pimg, flip: bool):
         return img.transpose(pimg.FLIP_LEFT_RIGHT) if flip else img
 
@@ -242,7 +249,7 @@ class RandomFlip:
         ret_dict = {}
         for k in ['image', 'image_next', 'image_prev', 'labels', 'depth']:
             if k in example:
-                ret_dict[k] = self._trans(example[k], flip)
+                ret_dict[k] = self._trans(example[k], flip) if not isinstance(example[k], torch.Tensor) else self._trans_tensor(example[k], flip)
         if ('flow' in example) and flip:
             ret_dict['flow'] = flip_flow_horizontal(example['flow'])
         return {**example, **ret_dict}

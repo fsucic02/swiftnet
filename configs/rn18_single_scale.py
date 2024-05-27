@@ -19,7 +19,7 @@ root = Path('datasets/cityscapes')      # add symbolic link to datasets folder f
 path = os.path.abspath(__file__)
 dir_path = os.path.dirname(path)
 
-evaluating = True                      # put to True if using the config only for evaluation of already trained model
+evaluating = False                      # put to True if using the config only for evaluation of already trained model
 # random_crop_size = 768                  # crop size, adjust it if having problems with GPU capacity
 random_crop_size = 448                  # crop size, adjust it if having problems with GPU capacity
 
@@ -65,8 +65,8 @@ else:
          ]
     )
 
-dataset_train = Cityscapes(root, transforms=trans_train, subset='train', labels_dir='pseudoFine') # change gtFine to pseudoFine
-dataset_val = Cityscapes(root, transforms=trans_val, subset='val', labels_dir='pseudoFine') # change gtFine to pseudoFine
+dataset_train = Cityscapes(root, transforms=trans_train, subset='train', labels_dir='pseudoFine2') # change gtFine to pseudoFine
+dataset_val = Cityscapes(root, transforms=trans_val, subset='val', labels_dir='pseudoFine2') # change gtFine to pseudoFine
 
 resnet = resnet18(pretrained=True, efficient=False, mean=mean, std=std, scale=scale)    # we are using resnet pretrained on Imagenet for faster convergence # noqa
 model = SemsegModel(resnet, num_classes)
@@ -90,14 +90,14 @@ else:
     optimizer = optim.Adam(optim_params, betas=(0.9, 0.99))
     lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs, lr_min)
 
-batch_size = 14             # batch size should be reduced if your GPU is not big enough for default configuration
+batch_size = 10             # batch size should be reduced if your GPU is not big enough for default configuration
 print(f'Batch size: {batch_size}')
 
 if evaluating:
     loader_train = DataLoader(dataset_train, batch_size=1, collate_fn=custom_collate)
 else:
     loader_train = DataLoader(dataset_train, batch_size=batch_size, shuffle=True, num_workers=4,
-                              pin_memory=True,
+                              pin_memory=False,
                               drop_last=True, collate_fn=custom_collate)
 loader_val = DataLoader(dataset_val, batch_size=1, collate_fn=custom_collate)
 
