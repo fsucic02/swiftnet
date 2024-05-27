@@ -125,15 +125,8 @@ def crop_and_scale_img(img: pimg, crop_box, target_size, pad_size, resample, bla
     return res
 
 def crop_and_scale_tensor(tensor, crop_box, target_size):
-    # tensor: input tenzor oblika CxHxW (19x1024x2048)
-    # crop_box: (left, upper, right, lower)
-    # target_size: (target_height, target_width)
-    # resample: ignoriramo jer torch.nn.functional.interpolate automatski koristi bilinearne interpolacije
-
-    # Izreži dio originalnog tenzora na temelju crop_box
     cropped_tensor = TF.crop(tensor, *crop_box)
 
-    # Skaliraj izrezani dio na ciljane dimenzije
     resized_tensor = F.interpolate(cropped_tensor.unsqueeze(0), size=target_size, mode='bilinear', align_corners=False).squeeze(0)
 
     return resized_tensor

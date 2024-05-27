@@ -1,0 +1,21 @@
+Elapsed time: 0:00:00.118551
+LR: 3.9998e-04
+LR: 9.9996e-05
+Epoch: 0 / 249
+Experiment dir: models/experiments/2024_05_27_15_58_18_rn18_single_scale
+Step: 0 Loss: 12508.5908
+Step: 20 Loss: 2875.0613
+Step: 40 Loss: 3397.5054
+Step: 60 Loss: 1768.8101
+Step: 80 Loss: 709.4418
+22.15fps
+Step: 100 Loss: 1429.8613
+Step: 120 Loss: 2752.8821
+Step: 140 Loss: 1222.0684
+Step: 160 Loss: 804.3778
+21.31fps
+Step: 180 Loss: 805.0385
+Step: 200 Loss: 3101.8896
+Step: 220 Loss: 1729.1763
+Step: 240 Loss: 1883.5277
+20.32fps

@@ -90,7 +90,7 @@ else:
     optimizer = optim.Adam(optim_params, betas=(0.9, 0.99))
     lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs, lr_min)
 
-batch_size = 10             # batch size should be reduced if your GPU is not big enough for default configuration
+batch_size = 8             # batch size should be reduced if your GPU is not big enough for default configuration
 print(f'Batch size: {batch_size}')
 
 if evaluating:

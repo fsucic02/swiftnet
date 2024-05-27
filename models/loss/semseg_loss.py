@@ -13,8 +13,6 @@ class SemsegCrossEntropy(nn.Module):
         self.print_each = print_each
 
     def loss(self, y, t):
-        #if y.shape[2:4] != t.shape[1:3]:
-        #    y = upsample(y, t.shape[1:3])
         y_prob = F.softmax(y, dim=1)
         kl_loss = F.kl_div(y_prob.log(), t, reduction='batchmean')
 
