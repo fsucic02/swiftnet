@@ -118,11 +118,12 @@ def one_hot_encoding(labels, C):
 
     return target
 
-def crop_and_scale_img(img: pimg, crop_box, target_size, pad_size, resample, blank_value):
-    target = pimg.new(img.mode, pad_size, color=blank_value)
-    target.paste(img)
-    res = target.crop(crop_box).resize(target_size, resample=resample)
-    return res
+def crop_and_scale_img(img: pimg, crop_box, target_size, resample):
+    cropped_img = img.crop(crop_box)
+    
+    resized_img = cropped_img.resize(target_size, resample=resample)
+    
+    return resized_img
 
 def crop_and_scale_tensor(tensor, crop_box, target_size):
     cropped_tensor = TF.crop(tensor, *crop_box)

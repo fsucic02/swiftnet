@@ -208,8 +208,8 @@ class RandomSquareCropAndScale:
         # left, upper, right, lower)
         return w, h, w + target_wh, h + target_wh
 
-    def _trans(self, img: pimg, crop_box, target_size, pad_size, resample, blank_value):
-        return crop_and_scale_img(img, crop_box, target_size, pad_size, resample, blank_value)
+    def _trans(self, img: pimg, crop_box, target_size, resample):
+        return crop_and_scale_img(img, crop_box, target_size, resample)
 
     def __call__(self, example):
         image = example['image']
@@ -222,14 +222,13 @@ class RandomSquareCropAndScale:
         flipped = example['flipped'] if 'flipped' in example else False
         crop_box = crop_fn(pad_size[0], pad_size[1], box_size, example.get('name'), flipped)
         ret_dict = {
-            'image': self._trans(image, crop_box, target_size, pad_size, RESAMPLE, self.mean),
+            'image': self._trans(image, crop_box, target_size, RESAMPLE),
         }
         if 'labels' in example:
             ret_dict['labels'] = crop_and_scale_tensor(example['labels'], crop_box, target_size)
         for k in ['image_prev', 'image_next']:
             if k in example:
-                ret_dict[k] = self._trans(example[k], crop_box, target_size, pad_size, RESAMPLE,
-                                          self.mean)
+                ret_dict[k] = self._trans(example[k], crop_box, target_size, RESAMPLE)
         if 'depth' in example:
             ret_dict['depth'] = self._trans(example['depth'], crop_box, target_size, pad_size, RESAMPLE_D, 0)
         if 'flow' in example:

@@ -61,12 +61,16 @@ def evaluate_semseg(model, data_loader, class_info, observers=()):
     model.eval()
     conf_matrix = ConfusionMatrix(task="multiclass", num_classes=model.num_classes)
     managers = [torch.no_grad()] + list(observers)
+    printed = False
     with contextlib.ExitStack() as stack:
         for ctx_mgr in managers:
             stack.enter_context(ctx_mgr)
         conf_mat = np.zeros((model.num_classes, model.num_classes), dtype=np.uint64)
         for step, batch in tqdm(enumerate(data_loader), total=len(data_loader)):
-            batch['original_labels'] = batch['original_labels'].int().cpu()
+            if not printed:
+              print(torch.eq(batch['original_labels'], 19).all())
+              printed = True
+            batch['original_labels'] = batch['original_labels'].cpu()
             logits, additional = model.do_forward(batch, batch['original_labels'].shape[1:3])
             pred = torch.argmax(logits.data, dim=1).int().cpu()
             for o in observers:

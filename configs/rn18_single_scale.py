@@ -41,7 +41,7 @@ target_size = (1024, 512)              # resolution of final feature map, with t
 # target_size_feats = (2048 // 4, 1024 // 4)
 target_size_feats = (1024 // 4, 512 // 4)
 
-eval_each = 4                           # frequency of validation process, it will be each 4 epochs
+eval_each = 1                           # frequency of validation process, it will be each 4 epochs
 
 
 trans_val = Compose(
@@ -90,7 +90,7 @@ else:
     optimizer = optim.Adam(optim_params, betas=(0.9, 0.99))
     lr_scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, epochs, lr_min)
 
-batch_size = 8             # batch size should be reduced if your GPU is not big enough for default configuration
+batch_size = 6             # batch size should be reduced if your GPU is not big enough for default configuration
 print(f'Batch size: {batch_size}')
 
 if evaluating:

@@ -13,10 +13,13 @@ class SemsegCrossEntropy(nn.Module):
         self.print_each = print_each
 
     def loss(self, y, t):
-        y_prob = F.softmax(y, dim=1)
-        kl_loss = F.kl_div(y_prob.log(), t, reduction='batchmean')
-
-        return kl_loss
+        kl_loss = F.kl_div(F.log_softmax(y, dim=1), t, reduction='none')
+        
+        mask = (t != self.ignore_id).float()
+        kl_loss = kl_loss * mask.unsqueeze(1)
+        loss = kl_loss.sum() / mask.sum()
+        
+        return loss
 
     def forward(self, logits, labels, **kwargs):
         loss = self.loss(logits, labels)
