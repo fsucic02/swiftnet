@@ -41,7 +41,7 @@ target_size = (1024, 512)              # resolution of final feature map, with t
 # target_size_feats = (2048 // 4, 1024 // 4)
 target_size_feats = (1024 // 4, 512 // 4)
 
-eval_each = 1                           # frequency of validation process, it will be each 4 epochs
+eval_each = 4                           # frequency of validation process, it will be each 4 epochs
 
 
 trans_val = Compose(
@@ -75,12 +75,11 @@ model.criterion = SemsegCrossEntropy(num_classes=num_classes, ignore_id=ignore_i
 if evaluating:
     model.load_state_dict(torch.load('model_best.pt'))        # change the path with your model path # noqa
 else:
-    lr = 4e-4               # hyperparameres to change
-    lr_min = 1e-6
+    lr = 1e-4               # hyperparameres to change
+    lr_min = 1e-7
     fine_tune_factor = 4
     weight_decay = 1e-4
-    epochs = 250
-
+    epochs = 320
     optim_params = [
         {'params': model.random_init_params(), 'lr': lr, 'weight_decay': weight_decay},
         {'params': model.fine_tune_params(), 'lr': lr / fine_tune_factor,

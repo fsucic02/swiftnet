@@ -14,11 +14,9 @@ class SemsegCrossEntropy(nn.Module):
         self.print_each = print_each
 
     def loss(self, y, t):
-        kl_loss = F.kl_div(F.log_softmax(y, dim=1), t, reduction='none')
+        kl_loss = F.kl_div(F.log_softmax(y, dim=1), t, reduction='sum')
         
-        mask = (t != self.ignore_id).float()
-        kl_loss = kl_loss * mask.unsqueeze(1)
-        loss = kl_loss.sum() / mask.sum()
+        loss = kl_loss / (3*448*448)
         
         return loss
 
