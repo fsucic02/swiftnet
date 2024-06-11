@@ -11657,3 +11657,813 @@ Elapsed time: 8:58:50.874014
 LR: 4.2864e-06
 LR: 1.1435e-06
 Epoch: 277 / 319
+Step: 0 Loss: 0.0046
+Step: 20 Loss: 0.0023
+Step: 40 Loss: 0.0055
+Step: 60 Loss: 0.0019
+Step: 80 Loss: 0.0078
+36.40fps
+Step: 100 Loss: 0.0020
+Step: 120 Loss: 0.0016
+Step: 140 Loss: 0.0020
+Step: 160 Loss: 0.0026
+37.81fps
+Step: 180 Loss: 0.0019
+Step: 200 Loss: 0.0036
+Step: 220 Loss: 0.0017
+Step: 240 Loss: 0.0021
+38.36fps
+Step: 260 Loss: 0.0036
+Step: 280 Loss: 0.0021
+Step: 300 Loss: 0.0022
+Step: 320 Loss: 0.0016
+38.56fps
+Step: 340 Loss: 0.0020
+Step: 360 Loss: 0.0036
+Step: 380 Loss: 0.0019
+Step: 400 Loss: 0.0021
+38.78fps
+Step: 420 Loss: 0.0040
+Step: 440 Loss: 0.0019
+Step: 460 Loss: 0.0028
+Step: 480 Loss: 0.0028
+38.99fps
+Elapsed time: 9:00:19.809627
+LR: 4.0921e-06
+LR: 1.0950e-06
+Epoch: 278 / 319
+Step: 0 Loss: 0.0039
+Step: 20 Loss: 0.0046
+Step: 40 Loss: 0.0020
+Step: 60 Loss: 0.0020
+Step: 80 Loss: 0.0026
+36.26fps
+Step: 100 Loss: 0.0017
+Step: 120 Loss: 0.0025
+Step: 140 Loss: 0.0036
+Step: 160 Loss: 0.0014
+37.52fps
+Step: 180 Loss: 0.0019
+Step: 200 Loss: 0.0028
+Step: 220 Loss: 0.0036
+Step: 240 Loss: 0.0021
+38.31fps
+Step: 260 Loss: 0.0021
+Step: 280 Loss: 0.0023
+Step: 300 Loss: 0.0025
+Step: 320 Loss: 0.0046
+38.65fps
+Step: 340 Loss: 0.0031
+Step: 360 Loss: 0.0161
+Step: 380 Loss: 0.0069
+Step: 400 Loss: 0.0035
+38.94fps
+Step: 420 Loss: 0.0021
+Step: 440 Loss: 0.0025
+Step: 460 Loss: 0.0023
+Step: 480 Loss: 0.0039
+39.16fps
+Elapsed time: 9:01:48.335509
+LR: 3.9022e-06
+LR: 1.0477e-06
+Epoch: 279 / 319
+Step: 0 Loss: 0.0044
+Step: 20 Loss: 0.0016
+Step: 40 Loss: 0.0037
+Step: 60 Loss: 0.0022
+Step: 80 Loss: 0.0030
+36.15fps
+Step: 100 Loss: 0.0024
+Step: 120 Loss: 0.0072
+Step: 140 Loss: 0.0026
+Step: 160 Loss: 0.0012
+36.90fps
+Step: 180 Loss: 0.0048
+Step: 200 Loss: 0.0024
+Step: 220 Loss: 0.0016
+Step: 240 Loss: 0.0034
+37.49fps
+Step: 260 Loss: 0.0021
+Step: 280 Loss: 0.0022
+Step: 300 Loss: 0.0025
+Step: 320 Loss: 0.0029
+38.23fps
+Step: 340 Loss: 0.0063
+Step: 360 Loss: 0.0027
+Step: 380 Loss: 0.0025
+Step: 400 Loss: 0.0028
+38.52fps
+Step: 420 Loss: 0.0036
+Step: 440 Loss: 0.0010
+Step: 460 Loss: 0.0027
+Step: 480 Loss: 0.0021
+38.86fps
+Elapsed time: 9:03:18.136663
+LR: 3.7168e-06
+LR: 1.0015e-06
+Epoch: 280 / 319
+Experiment dir: models/experiments/2024_06_11_11_33_02_rn18_single_scale
+Step: 0 Loss: 0.0067
+Step: 20 Loss: 0.0024
+Step: 40 Loss: 0.0025
+Step: 60 Loss: 0.0024
+Step: 80 Loss: 0.0049
+36.49fps
+Step: 100 Loss: 0.0029
+Step: 120 Loss: 0.0018
+Step: 140 Loss: 0.0022
+Step: 160 Loss: 0.0020
+37.72fps
+Step: 180 Loss: 0.0022
+Step: 200 Loss: 0.0034
+Step: 220 Loss: 0.0022
+Step: 240 Loss: 0.0049
+38.50fps
+Step: 260 Loss: 0.0015
+Step: 280 Loss: 0.0051
+Step: 300 Loss: 0.0027
+Step: 320 Loss: 0.0052
+38.95fps
+Step: 340 Loss: 0.0037
+Step: 360 Loss: 0.0017
+Step: 380 Loss: 0.0030
+Step: 400 Loss: 0.0021
+39.17fps
+Step: 420 Loss: 0.0025
+Step: 440 Loss: 0.0039
+Step: 460 Loss: 0.0032
+Step: 480 Loss: 0.0034
+39.30fps
+Evaluating model
+
+Errors:
+	road IoU accuracy = 97.13 %
+	sidewalk IoU accuracy = 77.64 %
+	building IoU accuracy = 90.57 %
+	wall IoU accuracy = 49.40 %
+	fence IoU accuracy = 49.99 %
+	pole IoU accuracy = 58.08 %
+	traffic light IoU accuracy = 61.94 %
+	traffic sign IoU accuracy = 70.90 %
+	vegetation IoU accuracy = 91.41 %
+	terrain IoU accuracy = 47.77 %
+	sky IoU accuracy = 88.91 %
+	person IoU accuracy = 77.49 %
+	rider IoU accuracy = 52.86 %
+	car IoU accuracy = 93.54 %
+	truck IoU accuracy = 56.10 %
+	bus IoU accuracy = 59.95 %
+	train IoU accuracy = 0.00 %
+	motorcycle IoU accuracy = 46.37 %
+	bicycle IoU accuracy = 73.90 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 65.47 %
+mean class recall -> TP / (TP+FN) = 78.46 %
+mean class precision -> TP / (TP+FP) = 74.97 %
+pixel accuracy = 94.62 %
+Best mIoU: 66.18% (epoch 264)
+Elapsed time: 9:06:31.006679
+LR: 3.5358e-06
+LR: 9.5637e-07
+Epoch: 281 / 319
+Step: 0 Loss: 0.0023
+Step: 20 Loss: 0.0023
+Step: 40 Loss: 0.0060
+Step: 60 Loss: 0.0020
+Step: 80 Loss: 0.0032
+36.20fps
+Step: 100 Loss: 0.0037
+Step: 120 Loss: 0.0040
+Step: 140 Loss: 0.0020
+Step: 160 Loss: 0.0044
+37.71fps
+Step: 180 Loss: 0.0045
+Step: 200 Loss: 0.0024
+Step: 220 Loss: 0.0024
+Step: 240 Loss: 0.0020
+38.43fps
+Step: 260 Loss: 0.0038
+Step: 280 Loss: 0.0024
+Step: 300 Loss: 0.0048
+Step: 320 Loss: 0.0026
+38.76fps
+Step: 340 Loss: 0.0029
+Step: 360 Loss: 0.0039
+Step: 380 Loss: 0.0049
+Step: 400 Loss: 0.0052
+39.04fps
+Step: 420 Loss: 0.0024
+Step: 440 Loss: 0.0034
+Step: 460 Loss: 0.0017
+Step: 480 Loss: 0.0026
+39.23fps
+Elapsed time: 9:07:59.545140
+LR: 3.3593e-06
+LR: 9.1239e-07
+Epoch: 282 / 319
+Step: 0 Loss: 0.0018
+Step: 20 Loss: 0.0022
+Step: 40 Loss: 0.0061
+Step: 60 Loss: 0.0015
+Step: 80 Loss: 0.0016
+36.38fps
+Step: 100 Loss: 0.0027
+Step: 120 Loss: 0.0029
+Step: 140 Loss: 0.0023
+Step: 160 Loss: 0.0018
+37.75fps
+Step: 180 Loss: 0.0029
+Step: 200 Loss: 0.0039
+Step: 220 Loss: 0.0053
+Step: 240 Loss: 0.0027
+38.40fps
+Step: 260 Loss: 0.0019
+Step: 280 Loss: 0.0024
+Step: 300 Loss: 0.0023
+Step: 320 Loss: 0.0037
+38.56fps
+Step: 340 Loss: 0.0029
+Step: 360 Loss: 0.0018
+Step: 380 Loss: 0.0023
+Step: 400 Loss: 0.0055
+38.87fps
+Step: 420 Loss: 0.0027
+Step: 440 Loss: 0.0043
+Step: 460 Loss: 0.0047
+Step: 480 Loss: 0.0093
+39.10fps
+Elapsed time: 9:09:28.248663
+LR: 3.1873e-06
+LR: 8.6952e-07
+Epoch: 283 / 319
+Step: 0 Loss: 0.0032
+Step: 20 Loss: 0.0041
+Step: 40 Loss: 0.0046
+Step: 60 Loss: 0.0039
+Step: 80 Loss: 0.0072
+35.64fps
+Step: 100 Loss: 0.0026
+Step: 120 Loss: 0.0044
+Step: 140 Loss: 0.0010
+Step: 160 Loss: 0.0035
+37.25fps
+Step: 180 Loss: 0.0036
+Step: 200 Loss: 0.0015
+Step: 220 Loss: 0.0023
+Step: 240 Loss: 0.0073
+38.04fps
+Step: 260 Loss: 0.0026
+Step: 280 Loss: 0.0017
+Step: 300 Loss: 0.0021
+Step: 320 Loss: 0.0021
+38.49fps
+Step: 340 Loss: 0.0045
+Step: 360 Loss: 0.0025
+Step: 380 Loss: 0.0026
+Step: 400 Loss: 0.0034
+38.81fps
+Step: 420 Loss: 0.0040
+Step: 440 Loss: 0.0027
+Step: 460 Loss: 0.0061
+Step: 480 Loss: 0.0021
+39.02fps
+Elapsed time: 9:10:57.064853
+LR: 3.0199e-06
+LR: 8.2778e-07
+Epoch: 284 / 319
+Experiment dir: models/experiments/2024_06_11_11_33_02_rn18_single_scale
+Step: 0 Loss: 0.0020
+Step: 20 Loss: 0.0030
+Step: 40 Loss: 0.0015
+Step: 60 Loss: 0.0029
+Step: 80 Loss: 0.0034
+36.07fps
+Step: 100 Loss: 0.0022
+Step: 120 Loss: 0.0036
+Step: 140 Loss: 0.0053
+Step: 160 Loss: 0.0021
+37.80fps
+Step: 180 Loss: 0.0029
+Step: 200 Loss: 0.0018
+Step: 220 Loss: 0.0032
+Step: 240 Loss: 0.0029
+38.60fps
+Step: 260 Loss: 0.0030
+Step: 280 Loss: 0.0110
+Step: 300 Loss: 0.0102
+Step: 320 Loss: 0.0033
+39.00fps
+Step: 340 Loss: 0.0036
+Step: 360 Loss: 0.0029
+Step: 380 Loss: 0.0030
+Step: 400 Loss: 0.0053
+39.05fps
+Step: 420 Loss: 0.0024
+Step: 440 Loss: 0.0025
+Step: 460 Loss: 0.0047
+Step: 480 Loss: 0.0040
+39.19fps
+Evaluating model
+
+Errors:
+	road IoU accuracy = 96.90 %
+	sidewalk IoU accuracy = 78.79 %
+	building IoU accuracy = 90.09 %
+	wall IoU accuracy = 46.14 %
+	fence IoU accuracy = 40.22 %
+	pole IoU accuracy = 57.94 %
+	traffic light IoU accuracy = 61.24 %
+	traffic sign IoU accuracy = 69.88 %
+	vegetation IoU accuracy = 91.38 %
+	terrain IoU accuracy = 50.59 %
+	sky IoU accuracy = 89.30 %
+	person IoU accuracy = 77.77 %
+	rider IoU accuracy = 52.55 %
+	car IoU accuracy = 93.63 %
+	truck IoU accuracy = 63.21 %
+	bus IoU accuracy = 61.63 %
+	train IoU accuracy = 0.00 %
+	motorcycle IoU accuracy = 48.45 %
+	bicycle IoU accuracy = 73.65 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 65.44 %
+mean class recall -> TP / (TP+FN) = 79.58 %
+mean class precision -> TP / (TP+FP) = 73.93 %
+pixel accuracy = 94.56 %
+Best mIoU: 66.18% (epoch 264)
+Elapsed time: 9:14:10.376396
+LR: 2.8569e-06
+LR: 7.8716e-07
+Epoch: 285 / 319
+Step: 0 Loss: 0.0031
+Step: 20 Loss: 0.0050
+Step: 40 Loss: 0.0024
+Step: 60 Loss: 0.0018
+Step: 80 Loss: 0.0037
+36.56fps
+Step: 100 Loss: 0.0024
+Step: 120 Loss: 0.0047
+Step: 140 Loss: 0.0016
+Step: 160 Loss: 0.0016
+38.13fps
+Step: 180 Loss: 0.0015
+Step: 200 Loss: 0.0035
+Step: 220 Loss: 0.0027
+Step: 240 Loss: 0.0023
+38.65fps
+Step: 260 Loss: 0.0014
+Step: 280 Loss: 0.0027
+Step: 300 Loss: 0.0023
+Step: 320 Loss: 0.0025
+38.60fps
+Step: 340 Loss: 0.0040
+Step: 360 Loss: 0.0051
+Step: 380 Loss: 0.0032
+Step: 400 Loss: 0.0031
+38.84fps
+Step: 420 Loss: 0.0016
+Step: 440 Loss: 0.0033
+Step: 460 Loss: 0.0015
+Step: 480 Loss: 0.0019
+38.89fps
+Elapsed time: 9:15:39.657484
+LR: 2.6986e-06
+LR: 7.4769e-07
+Epoch: 286 / 319
+Step: 0 Loss: 0.0030
+Step: 20 Loss: 0.0026
+Step: 40 Loss: 0.0024
+Step: 60 Loss: 0.0009
+Step: 80 Loss: 0.0093
+35.48fps
+Step: 100 Loss: 0.0020
+Step: 120 Loss: 0.0031
+Step: 140 Loss: 0.0020
+Step: 160 Loss: 0.0028
+37.11fps
+Step: 180 Loss: 0.0011
+Step: 200 Loss: 0.0035
+Step: 220 Loss: 0.0068
+Step: 240 Loss: 0.0021
+37.93fps
+Step: 260 Loss: 0.0022
+Step: 280 Loss: 0.0031
+Step: 300 Loss: 0.0016
+Step: 320 Loss: 0.0041
+38.28fps
+Step: 340 Loss: 0.0032
+Step: 360 Loss: 0.0030
+Step: 380 Loss: 0.0025
+Step: 400 Loss: 0.0025
+38.61fps
+Step: 420 Loss: 0.0028
+Step: 440 Loss: 0.0046
+Step: 460 Loss: 0.0020
+Step: 480 Loss: 0.0014
+38.83fps
+Elapsed time: 9:17:08.915164
+LR: 2.5447e-06
+LR: 7.0935e-07
+Epoch: 287 / 319
+Step: 0 Loss: 0.0021
+Step: 20 Loss: 0.0067
+Step: 40 Loss: 0.0029
+Step: 60 Loss: 0.0026
+Step: 80 Loss: 0.0119
+36.20fps
+Step: 100 Loss: 0.0039
+Step: 120 Loss: 0.0022
+Step: 140 Loss: 0.0040
+Step: 160 Loss: 0.0021
+38.12fps
+Step: 180 Loss: 0.0040
+Step: 200 Loss: 0.0026
+Step: 220 Loss: 0.0029
+Step: 240 Loss: 0.0017
+38.79fps
+Step: 260 Loss: 0.0017
+Step: 280 Loss: 0.0026
+Step: 300 Loss: 0.0024
+Step: 320 Loss: 0.0024
+39.06fps
+Step: 340 Loss: 0.0027
+Step: 360 Loss: 0.0037
+Step: 380 Loss: 0.0021
+Step: 400 Loss: 0.0026
+39.09fps
+Step: 420 Loss: 0.0023
+Step: 440 Loss: 0.0024
+Step: 460 Loss: 0.0045
+Step: 480 Loss: 0.0015
+39.22fps
+Elapsed time: 9:18:37.988944
+LR: 2.3955e-06
+LR: 6.7215e-07
+Epoch: 288 / 319
+Experiment dir: models/experiments/2024_06_11_11_33_02_rn18_single_scale
+Step: 0 Loss: 0.0017
+Step: 20 Loss: 0.0032
+Step: 40 Loss: 0.0044
+Step: 60 Loss: 0.0025
+Step: 80 Loss: 0.0030
+36.08fps
+Step: 100 Loss: 0.0021
+Step: 120 Loss: 0.0015
+Step: 140 Loss: 0.0018
+Step: 160 Loss: 0.0079
+37.54fps
+Step: 180 Loss: 0.0019
+Step: 200 Loss: 0.0048
+Step: 220 Loss: 0.0024
+Step: 240 Loss: 0.0021
+38.30fps
+Step: 260 Loss: 0.0023
+Step: 280 Loss: 0.0039
+Step: 300 Loss: 0.0030
+Step: 320 Loss: 0.0029
+38.59fps
+Step: 340 Loss: 0.0023
+Step: 360 Loss: 0.0051
+Step: 380 Loss: 0.0028
+Step: 400 Loss: 0.0017
+38.88fps
+Step: 420 Loss: 0.0021
+Step: 440 Loss: 0.0044
+Step: 460 Loss: 0.0041
+Step: 480 Loss: 0.0029
+39.14fps
+Evaluating model
+
+Errors:
+	road IoU accuracy = 96.88 %
+	sidewalk IoU accuracy = 78.32 %
+	building IoU accuracy = 90.12 %
+	wall IoU accuracy = 49.12 %
+	fence IoU accuracy = 44.27 %
+	pole IoU accuracy = 58.03 %
+	traffic light IoU accuracy = 61.35 %
+	traffic sign IoU accuracy = 69.88 %
+	vegetation IoU accuracy = 91.40 %
+	terrain IoU accuracy = 48.15 %
+	sky IoU accuracy = 88.06 %
+	person IoU accuracy = 77.09 %
+	rider IoU accuracy = 52.33 %
+	car IoU accuracy = 93.77 %
+	truck IoU accuracy = 64.59 %
+	bus IoU accuracy = 63.22 %
+	train IoU accuracy = 0.00 %
+	motorcycle IoU accuracy = 51.95 %
+	bicycle IoU accuracy = 73.81 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 65.91 %
+mean class recall -> TP / (TP+FN) = 80.36 %
+mean class precision -> TP / (TP+FP) = 73.95 %
+pixel accuracy = 94.56 %
+Best mIoU: 66.18% (epoch 264)
+Elapsed time: 9:21:51.018341
+LR: 2.2508e-06
+LR: 6.3609e-07
+Epoch: 289 / 319
+Step: 0 Loss: 0.0038
+Step: 20 Loss: 0.0027
+Step: 40 Loss: 0.0029
+Step: 60 Loss: 0.0017
+Step: 80 Loss: 0.0023
+36.43fps
+Step: 100 Loss: 0.0029
+Step: 120 Loss: 0.0049
+Step: 140 Loss: 0.0020
+Step: 160 Loss: 0.0018
+37.85fps
+Step: 180 Loss: 0.0021
+Step: 200 Loss: 0.0019
+Step: 220 Loss: 0.0026
+Step: 240 Loss: 0.0025
+38.50fps
+Step: 260 Loss: 0.0036
+Step: 280 Loss: 0.0022
+Step: 300 Loss: 0.0021
+Step: 320 Loss: 0.0019
+38.94fps
+Step: 340 Loss: 0.0021
+Step: 360 Loss: 0.0042
+Step: 380 Loss: 0.0019
+Step: 400 Loss: 0.0024
+39.18fps
+Step: 420 Loss: 0.0068
+Step: 440 Loss: 0.0028
+Step: 460 Loss: 0.0027
+Step: 480 Loss: 0.0024
+39.32fps
+Elapsed time: 9:23:19.388461
+LR: 2.1108e-06
+LR: 6.0119e-07
+Epoch: 290 / 319
+Step: 0 Loss: 0.0045
+Step: 20 Loss: 0.0019
+Step: 40 Loss: 0.0054
+Step: 60 Loss: 0.0019
+Step: 80 Loss: 0.0038
+36.42fps
+Step: 100 Loss: 0.0036
+Step: 120 Loss: 0.0052
+Step: 140 Loss: 0.0123
+Step: 160 Loss: 0.0020
+38.12fps
+Step: 180 Loss: 0.0019
+Step: 200 Loss: 0.0033
+Step: 220 Loss: 0.0038
+Step: 240 Loss: 0.0021
+38.72fps
+Step: 260 Loss: 0.0036
+Step: 280 Loss: 0.0014
+Step: 300 Loss: 0.0020
+Step: 320 Loss: 0.0032
+39.05fps
+Step: 340 Loss: 0.0058
+Step: 360 Loss: 0.0066
+Step: 380 Loss: 0.0011
+Step: 400 Loss: 0.0029
+39.07fps
+Step: 420 Loss: 0.0032
+Step: 440 Loss: 0.0045
+Step: 460 Loss: 0.0029
+Step: 480 Loss: 0.0020
+39.14fps
+Elapsed time: 9:24:48.639912
+LR: 1.9754e-06
+LR: 5.6743e-07
+Epoch: 291 / 319
+Step: 0 Loss: 0.0013
+Step: 20 Loss: 0.0021
+Step: 40 Loss: 0.0020
+Step: 60 Loss: 0.0024
+Step: 80 Loss: 0.0022
+36.37fps
+Step: 100 Loss: 0.0033
+Step: 120 Loss: 0.0030
+Step: 140 Loss: 0.0013
+Step: 160 Loss: 0.0035
+37.76fps
+Step: 180 Loss: 0.0033
+Step: 200 Loss: 0.0027
+Step: 220 Loss: 0.0016
+Step: 240 Loss: 0.0027
+38.50fps
+Step: 260 Loss: 0.0023
+Step: 280 Loss: 0.0022
+Step: 300 Loss: 0.0027
+Step: 320 Loss: 0.0029
+38.87fps
+Step: 340 Loss: 0.0027
+Step: 360 Loss: 0.0046
+Step: 380 Loss: 0.0033
+Step: 400 Loss: 0.0048
+39.04fps
+Step: 420 Loss: 0.0017
+Step: 440 Loss: 0.0026
+Step: 460 Loss: 0.0024
+Step: 480 Loss: 0.0038
+39.30fps
+Elapsed time: 9:26:16.832964
+LR: 1.8446e-06
+LR: 5.3483e-07
+Epoch: 292 / 319
+Experiment dir: models/experiments/2024_06_11_11_33_02_rn18_single_scale
+Step: 0 Loss: 0.0033
+Step: 20 Loss: 0.0016
+Step: 40 Loss: 0.0026
+Step: 60 Loss: 0.0035
+Step: 80 Loss: 0.0028
+36.59fps
+Step: 100 Loss: 0.0014
+Step: 120 Loss: 0.0042
+Step: 140 Loss: 0.0092
+Step: 160 Loss: 0.0019
+36.50fps
+Step: 180 Loss: 0.0015
+Step: 200 Loss: 0.0042
+Step: 220 Loss: 0.0027
+Step: 240 Loss: 0.0088
+36.78fps
+Step: 260 Loss: 0.0024
+Step: 280 Loss: 0.0042
+Step: 300 Loss: 0.0029
+Step: 320 Loss: 0.0042
+36.82fps
+Step: 340 Loss: 0.0021
+Step: 360 Loss: 0.0015
+Step: 380 Loss: 0.0026
+Step: 400 Loss: 0.0018
+37.26fps
+Step: 420 Loss: 0.0026
+Step: 440 Loss: 0.0055
+Step: 460 Loss: 0.0020
+Step: 480 Loss: 0.0012
+37.09fps
+Evaluating model
+
+Errors:
+	road IoU accuracy = 97.04 %
+	sidewalk IoU accuracy = 78.94 %
+	building IoU accuracy = 90.42 %
+	wall IoU accuracy = 48.66 %
+	fence IoU accuracy = 46.33 %
+	pole IoU accuracy = 58.31 %
+	traffic light IoU accuracy = 62.02 %
+	traffic sign IoU accuracy = 70.20 %
+	vegetation IoU accuracy = 91.36 %
+	terrain IoU accuracy = 43.31 %
+	sky IoU accuracy = 89.41 %
+	person IoU accuracy = 77.33 %
+	rider IoU accuracy = 52.92 %
+	car IoU accuracy = 93.83 %
+	truck IoU accuracy = 62.17 %
+	bus IoU accuracy = 63.78 %
+	train IoU accuracy = 0.00 %
+	motorcycle IoU accuracy = 53.89 %
+	bicycle IoU accuracy = 74.10 %
+IoU mean class accuracy -> TP / (TP+FN+FP) = 66.00 %
+mean class recall -> TP / (TP+FN) = 80.44 %
+mean class precision -> TP / (TP+FP) = 74.19 %
+pixel accuracy = 94.67 %
+Best mIoU: 66.18% (epoch 264)
+Elapsed time: 9:29:35.625184
+LR: 1.7184e-06
+LR: 5.0339e-07
+Epoch: 293 / 319
+Step: 0 Loss: 0.0040
+Step: 20 Loss: 0.0022
+Step: 40 Loss: 0.0064
+Step: 60 Loss: 0.0022
+Step: 80 Loss: 0.0023
+36.46fps
+Step: 100 Loss: 0.0017
+Step: 120 Loss: 0.0021
+Step: 140 Loss: 0.0039
+Step: 160 Loss: 0.0014
+38.09fps
+Step: 180 Loss: 0.0027
+Step: 200 Loss: 0.0053
+Step: 220 Loss: 0.0046
+Step: 240 Loss: 0.0023
+38.64fps
+Step: 260 Loss: 0.0040
+Step: 280 Loss: 0.0046
+Step: 300 Loss: 0.0044
+Step: 320 Loss: 0.0043
+38.78fps
+Step: 340 Loss: 0.0026
+Step: 360 Loss: 0.0034
+Step: 380 Loss: 0.0041
+Step: 400 Loss: 0.0028
+39.03fps
+Step: 420 Loss: 0.0015
+Step: 440 Loss: 0.0019
+Step: 460 Loss: 0.0022
+Step: 480 Loss: 0.0023
+39.24fps
+Elapsed time: 9:31:04.096777
+LR: 1.5969e-06
+LR: 4.7311e-07
+Epoch: 294 / 319
+Step: 0 Loss: 0.0017
+Step: 20 Loss: 0.0020
+Step: 40 Loss: 0.0025
+Step: 60 Loss: 0.0019
+Step: 80 Loss: 0.0021
+36.48fps
+Step: 100 Loss: 0.0025
+Step: 120 Loss: 0.0023
+Step: 140 Loss: 0.0029
+Step: 160 Loss: 0.0030
+37.72fps
+Step: 180 Loss: 0.0036
+Step: 200 Loss: 0.0026
+Step: 220 Loss: 0.0028
+Step: 240 Loss: 0.0025
+38.28fps
+Step: 260 Loss: 0.0026
+Step: 280 Loss: 0.0046
+Step: 300 Loss: 0.0022
+Step: 320 Loss: 0.0012
+38.81fps
+Step: 340 Loss: 0.0019
+Step: 360 Loss: 0.0035
+Step: 380 Loss: 0.0028
+Step: 400 Loss: 0.0026
+39.06fps
+Step: 420 Loss: 0.0017
+Step: 440 Loss: 0.0038
+Step: 460 Loss: 0.0051
+Step: 480 Loss: 0.0024
+39.22fps
+Elapsed time: 9:32:32.837165
+LR: 1.4801e-06
+LR: 4.4399e-07
+Epoch: 295 / 319
+Step: 0 Loss: 0.0031
+Step: 20 Loss: 0.0036
+Step: 40 Loss: 0.0029
+Step: 60 Loss: 0.0023
+Step: 80 Loss: 0.0022
+35.73fps
+Step: 100 Loss: 0.0016
+Step: 120 Loss: 0.0031
+Step: 140 Loss: 0.0042
+Step: 160 Loss: 0.0018
+37.76fps
+Step: 180 Loss: 0.0028
+Step: 200 Loss: 0.0023
+Step: 220 Loss: 0.0028
+Step: 240 Loss: 0.0052
+38.31fps
+Step: 260 Loss: 0.0025
+Step: 280 Loss: 0.0035
+Step: 300 Loss: 0.0024
+Step: 320 Loss: 0.0023
+38.62fps
+Step: 340 Loss: 0.0046
+Step: 360 Loss: 0.0025
+Step: 380 Loss: 0.0037
+Step: 400 Loss: 0.0043
+38.78fps
+Step: 420 Loss: 0.0016
+Step: 440 Loss: 0.0030
+Step: 460 Loss: 0.0015
+Step: 480 Loss: 0.0028
+38.88fps
+Elapsed time: 9:34:02.145404
+LR: 1.3680e-06
+LR: 4.1604e-07
+Epoch: 296 / 319
+Experiment dir: models/experiments/2024_06_11_11_33_02_rn18_single_scale
+Step: 0 Loss: 0.0015
+Step: 20 Loss: 0.0031
+Step: 40 Loss: 0.0021
+Step: 60 Loss: 0.0037
+Step: 80 Loss: 0.0036
+36.04fps
+Step: 100 Loss: 0.0025
+Step: 120 Loss: 0.0077
+Step: 140 Loss: 0.0019
+Step: 160 Loss: 0.0023
+37.18fps
+Step: 180 Loss: 0.0021
+Step: 200 Loss: 0.0043
+Step: 220 Loss: 0.0017
+Step: 240 Loss: 0.0036
+37.96fps
+Step: 260 Loss: 0.0041
+Step: 280 Loss: 0.0049
+Step: 300 Loss: 0.0018
+Step: 320 Loss: 0.0039
+38.30fps
+Step: 340 Loss: 0.0023
+Step: 360 Loss: 0.0017
+Step: 380 Loss: 0.0022
+Step: 400 Loss: 0.0038
+38.60fps
+Step: 420 Loss: 0.0074
+Step: 440 Loss: 0.0020
+Step: 460 Loss: 0.0020
+Step: 480 Loss: 0.0024
+38.79fps
+Evaluating model
