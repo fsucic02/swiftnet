@@ -16,7 +16,7 @@ class SemsegCrossEntropy(nn.Module):
     def loss(self, y, t):
         kl_loss = F.kl_div(F.log_softmax(y / 5, dim=1), t, reduction='sum')
         
-        loss = kl_loss * 25 / (3*448*448)
+        loss = kl_loss * 25/ (3*448*448)
         
         return loss
 
